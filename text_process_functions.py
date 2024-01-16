@@ -30,3 +30,18 @@ def removeStopwords(tokens):
       stoplist.append(token)
 
   return stoplist
+
+#get the stem or lem for each word
+def stemlem(tokens, typ):
+    """return a list of stemming or lemmatization of the tokens
+    """
+    if typ == "stemming":
+        stemmer = PorterStemmer()
+        stemwords = [stemmer.stem(tok) for tok in tokens]
+        return stemwords
+
+    if typ == "lemmatization":
+        lemmitazer = WordNetLemmatizer()
+        lemwords = [lemmitazer.lemmatize(tok) for tok in tokens]
+        return lemwords
+
