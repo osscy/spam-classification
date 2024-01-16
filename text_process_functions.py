@@ -6,7 +6,6 @@ import pandas as pd
 #ex can find words like: 1000%! or go:https, or words with ! in them. 
 #thus if a word contain these, will we remove the word
 
-
 def createStopwordFile():
     #get stopwords and create a list --> save as txt file
     #download if not done
