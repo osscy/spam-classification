@@ -24,7 +24,7 @@ x = data
 y = label_data
 
 #split data to train and text
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state= 42)
+x_train, x_test, y_tain, y_text = train_test_split(x, y, test_size=0.33, random_state= 42)
 
 #create model
 naive_bayer = MultinomialNB()
