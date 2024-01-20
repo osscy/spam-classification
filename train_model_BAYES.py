@@ -1,11 +1,10 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import classification_report
 from sklearn.naive_bayes import MultinomialNB
 
 from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import cross_validate
 
 import pandas as pd
 
@@ -16,7 +15,7 @@ data = pd.read_csv("processed_data.csv")
 use_data = data["stem_words"]
 label_data = data["type"] 
 
-#create hashingvectorizer
+#create tfidfvectors
 vector = TfidfVectorizer()
 data = vector.fit_transform(use_data)
 
@@ -24,7 +23,7 @@ x = data
 y = label_data
 
 #split data to train and text
-x_train, x_test, y_tain, y_text = train_test_split(x, y, test_size=0.33, random_state= 42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state= 42)
 
 #create model
 naive_bayer = MultinomialNB()
