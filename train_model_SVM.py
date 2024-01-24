@@ -27,7 +27,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random
 
 model = svm.SVC()
 
-parameters = {"C": [0.01, 0.1, 1, 5, 10], "kernel": ["linear", "poly", "rbf"]}
+parameters = {"C": [0.01, 0.1, 1, 5, 10], "kernel": ["linear", "rbf"]}
 
 #create gird
 grid = GridSearchCV(model, parameters, cv = 5, scoring = "accuracy")
